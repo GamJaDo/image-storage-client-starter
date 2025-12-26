@@ -1,17 +1,26 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '3.5.9'
+	id 'java-library'
+	id 'maven-publish'
+	id 'org.springframework.boot' version '3.5.0'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
-group = 'Personal_Server'
-version = '0.0.1-SNAPSHOT'
-description = 'imageStorage server'
+group = 'com.github.GamJaDo'
+version = '1.0.1'
 
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
 	}
+}
+
+bootJar {
+	enabled = false
+}
+
+jar {
+	enabled = true
 }
 
 configurations {
@@ -33,6 +42,18 @@ dependencies {
 
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+}
+
+// JitPack
+publishing {
+	publications {
+		mavenJava(MavenPublication) {
+			from components.java
+			groupId = 'com.github.GamJaDo'
+			artifactId = 'image-storage-client-starter'
+			version = '1.0.2'
+		}
+	}
 }
 
 tasks.named('test') {
