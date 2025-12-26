@@ -6,7 +6,7 @@ plugins {
 }
 
 group = 'com.github.GamJaDo'
-version = '1.0.3'
+version = '1.0.4'
 
 java {
 	toolchain {
@@ -41,7 +41,7 @@ publishing {
 			from components.java
 			groupId = 'com.github.GamJaDo'
 			artifactId = 'image-storage-client-starter'
-			version = '1.0.3'
+			version = '1.0.4'
 
 			versionMapping {
 				usage('java-api') {
