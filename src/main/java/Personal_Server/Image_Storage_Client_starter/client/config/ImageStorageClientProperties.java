@@ -9,7 +9,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 @ConfigurationProperties(prefix = "image-storage.client")
 public class ImageStorageClientProperties {
 
-    private String serverUrl = "";
+    private String serverUrl = "http://image-storage.duckdns.org:8090";
 
     private int connectTimeout = 5000;
 
